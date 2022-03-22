@@ -4,7 +4,7 @@ type ArgumentTypes<T> = T extends (...args: infer U) => infer R ? U : never;
 type ReplaceReturnType<O, N> = (...a: ArgumentTypes<O>) => N;
 
 /**
- * setQueryStringRetainNullValue and setSanitizedQueryString are optional callable right before build.
+ * setQueryStringRetainNullValue and setSanitizedQueryString are optional calls, callable right before build.
  * A compile-time error will occur if build() is called before setBaseUrl, setRoute, and setEndpoint.
  */
 type Builder<K extends keyof UrlBuilder> = {
